@@ -1,4 +1,4 @@
-# Config Profile for C++ DS&A Practices With VSC LeeCode Extension and
+# Config Profile for C++ DS&A Practices With VSC LeeCode Extension
 
 ## Features
 
