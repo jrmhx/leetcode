@@ -49,5 +49,11 @@
     "editor.detectIndentation": false,
     "editor.insertSpaces": false,
     "editor.tabSize": 4,
-    "editor.indentSize": 4
+    "editor.indentSize": 4,
+	"leetcode.filePath": {
+	"default": {
+		"folder": "src",
+		"filename": "${id}.${kebab-case-name}.${ext}"
+	}
+}
 }
