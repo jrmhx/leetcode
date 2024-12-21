@@ -14,11 +14,23 @@ using namespace std;
 class Solution {
 public:
     string convert(string s, int numRows) {
-        vector<vector<char>> grid;
-
-		for (int i = 0; i < s.length(); i++){
-			
+		if (numRows == 1 || numRows >= s.length()) return s;
+        vector<vector<char>> rows(numRows);
+		int offset = 1; // init direction
+		int r = 0; // init row to start with
+		for(char c : s){
+			if (r == 0) offset = 1;
+			if (r == numRows - 1) offset = -1;
+			rows[r].push_back(c);
+			r += offset;
 		}
+		string result = "";
+		for (const auto & row : rows){
+			for (char c : row){
+				result += c;
+			}
+		}
+		return result;
     }
 };
 // @lc code=end
