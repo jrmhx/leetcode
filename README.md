@@ -1,4 +1,12 @@
-# DS&A Practices With VSC LeeCode Extension and Config Profile for Local C++ Run and Debug
+# Config Profile for C++ DS&A Practices With VSC LeeCode Extension and
+
+## Features
+
+Local C++ Run and Debug for LeetCode Practices, submission and question display within VSC.
+
+![Question Display](./screenshots/pic1.png)
+
+![Run and Debug](./screenshots/pic2.png)
 
 ## Requirements
 
@@ -8,6 +16,6 @@
 
 ## Structure
 
-- /code: C++ source code files
+- /src: C++ source code files
 - /target: build artifacts
 - /.vscode: Visual Studio Code configuration files
