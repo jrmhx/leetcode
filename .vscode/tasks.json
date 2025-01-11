@@ -4,7 +4,7 @@
         {
             "label": "C/C++: g++ build active file",
             "type": "shell",
-            "command": "/usr/bin/g++",
+            "command": "/usr/bin/g++", //update to ur own c/cpp compiler path
             "args": [
                 "-g",
                 "${file}",
@@ -20,7 +20,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++-12 build active file",
-            "command": "/usr/bin/g++-12",
+            "command": "/usr/bin/g++-12", //update to ur own c/cpp compiler path
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
