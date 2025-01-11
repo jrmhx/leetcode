@@ -24,3 +24,8 @@ DWARF/
 *.swp
 *.DS_Store
 
+# Ignore jetbrains IDE files
+.idea/
+*.iml
+*.ipr
+*.iws

@@ -45,7 +45,11 @@ int main() {
 
     Solution solution;
 
-    int ans = solution.change(4681, coins);
+	int num;
+
+	cin >> num;
+
+    int ans = solution.change(num, coins);
 
     cout << ans << endl;
 

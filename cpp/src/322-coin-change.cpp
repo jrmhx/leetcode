@@ -16,7 +16,7 @@ class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
         sort(coins.begin(), coins.end(), greater<int>());
-		unordered_map<pair<int, int>, int> umap;
+		// unordered_map<pair<int, int>, int> umap;
 
 		auto combo = [&](int i, int m, int c) -> unsigned int {
 			if (i == coins.size()) {
