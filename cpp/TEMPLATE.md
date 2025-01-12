@@ -1,6 +1,6 @@
 # A Code Template Cheatsheet
 
-### Two pointers: one input, opposite ends
+## Two pointers: one input, opposite ends
 
 ```cpp
 int fn(vector<int>& arr) {
@@ -21,7 +21,7 @@ int fn(vector<int>& arr) {
 }
 ```
 
-### Two pointers: two inputs, exhaust both
+## Two pointers: two inputs, exhaust both
 
 ```cpp
 int fn(vector<int>& arr1, vector<int>& arr2) {
@@ -50,27 +50,28 @@ int fn(vector<int>& arr1, vector<int>& arr2) {
 }
 ```
 
-### Two pointers: slow and fast pointer
+## Two pointers: slow and fast pointer
 
 ```cpp
 int fn(vector<int>& arr) {
-	int slow = 0;
-	int fast = 0;
+    int slow = 0;
+    int fast = 0;
 
-	while (fast < arr.size()) {
-		// do some logic here
-		if (CONDITION) {
-			slow++;
-		}
+    while (fast < arr.size()) {
+        // do some logic here
+        if (CONDITION) {
+            slow++;
+        }
 
-		fast++;
-	}
+        fast++;
+    }
 
-	return slow;
+    return slow;
 }
 ```
 
-### Sliding Window
+## Sliding Window
+
 ```cpp
 int fn(vector<int>& arr) {
     int left = 0, ans = 0, curr = 0;
@@ -90,7 +91,8 @@ int fn(vector<int>& arr) {
 }
 ```
 
-### Build a prefix sum
+## Build a prefix sum
+
 ```cpp
 vector<int> fn(vector<int>& arr) {
     vector<int> prefix(arr.size());
@@ -104,14 +106,16 @@ vector<int> fn(vector<int>& arr) {
 }
 ```
 
-### Efficient string building
+## Efficient string building
+
 ```cpp
 string fn(vector<char>& arr) {
     return string(arr.begin(), arr.end())
 }
 ```
 
-### Linked list: fast and slow pointer
+## Linked list: fast and slow pointer
+
 ```cpp
 int fn(ListNode* head) {
     ListNode* slow = head;
@@ -128,7 +132,8 @@ int fn(ListNode* head) {
 }
 ```
 
-### Linked list: reverse a linked list
+## Linked list: reverse a linked list
+
 ```cpp
 ListNode* fn(ListNode* head) {
     ListNode* curr = head;
@@ -144,7 +149,8 @@ ListNode* fn(ListNode* head) {
 }
 ```
 
-### Find number of subarrays that fit an exact criteria
+## Find number of subarrays that fit an exact criteria
+
 ```cpp
 int fn(vector<int>& arr, int k) {
     unordered_map<int, int> counts;
@@ -161,7 +167,8 @@ int fn(vector<int>& arr, int k) {
 }
 ```
 
-### Monotonic increasing stack
+## Monotonic increasing stack
+
 ```cpp
 int fn(vector<int>& arr) {
     stack<integer> stack;
@@ -179,20 +186,22 @@ int fn(vector<int>& arr) {
 }
 ```
 
-### Binary Tree: preorder traversal
+## Binary Tree: preorder traversal
+
 ```cpp
 void preorder(TreeNode* root) {
-	if (root == nullptr) {
-		return;
-	}
+    if (root == nullptr) {
+        return;
+    }
 
-	// do logic
-	preorder(root->left);
-	preorder(root->right);
+    // do logic
+    preorder(root->left);
+    preorder(root->right);
 }
 ```
 
-### Binary tree: DFS (recursive)
+## Binary tree: DFS (recursive)
+
 ```cpp
 int dfs(TreeNode* root) {
     if (root == nullptr) {
@@ -207,7 +216,8 @@ int dfs(TreeNode* root) {
 }
 ```
 
-### Binary tree: BFS (iterative)
+## Binary tree: BFS (iterative)
+
 ```cpp
 int dfs(TreeNode* root) {
     stack<TreeNode*> stack;
@@ -230,7 +240,8 @@ int dfs(TreeNode* root) {
 }
 ```
 
-### Binary tree: BFS
+## Binary tree: BFS
+
 ```cpp
 int fn(TreeNode* root) {
     queue<TreeNode*> queue;
@@ -258,7 +269,8 @@ int fn(TreeNode* root) {
 }
 ```
 
-### Graph: DFS (recursive)
+## Graph: DFS (recursive)
+
 ```cpp
 unordered_set<int> seen;
 
@@ -281,7 +293,8 @@ int dfs(int node, vector<vector<int>>& graph) {
 }
 ```
 
-### Graph: DFS (iterative)
+## Graph: DFS (iterative)
+
 ```cpp
 int fn(vector<vector<int>>& graph) {
     stack<int> stack;
@@ -304,7 +317,8 @@ int fn(vector<vector<int>>& graph) {
 }
 ```
 
-### Graph: BFS
+## Graph: BFS
+
 ```cpp
 int fn(vector<vector<int>>& graph) {
     queue<int> queue;
@@ -327,7 +341,8 @@ int fn(vector<vector<int>>& graph) {
 }
 ```
 
-### Find top k elements with heap
+## Find top k elements with heap
+
 ```cpp
 vector<int> fn(vector<int>& arr, int k) {
     priority_queue<int, CRITERIA> heap;
@@ -348,7 +363,8 @@ vector<int> fn(vector<int>& arr, int k) {
 }
 ```
 
-### Binary search
+## Binary search
+
 ```cpp
 int binarySearch(vector<int>& arr, int target) {
         int left = 0;
@@ -371,7 +387,8 @@ int binarySearch(vector<int>& arr, int target) {
     }
 ```
 
-### Binary search: duplicate elements, left-most insertion point
+## Binary search: duplicate elements, left-most insertion point
+
 ```cpp
 int binarySearch(vector<int>& arr, int target) {
     int left = 0;
@@ -389,7 +406,8 @@ int binarySearch(vector<int>& arr, int target) {
 }
 ```
 
-### Binary search: duplicate elements, right-most insertion point
+## Binary search: duplicate elements, right-most insertion point
+
 ```cpp
 int binarySearch(vector<int>& arr, int target) {
     int left = 0;
@@ -407,9 +425,9 @@ int binarySearch(vector<int>& arr, int target) {
 }
 ```
 
-### Binary search: for greedy problems
+## Binary search: for greedy problems
 
-#### If looking for a minimum:
+### If looking for a minimum
 
 ```cpp
 int fn(vector<int>& arr) {
@@ -433,7 +451,7 @@ bool check(int x) {
 }
 ```
 
-#### If looking for a maximum:
+### If looking for a maximum
 
 ```cpp
 int fn(vector<int>& arr) {
@@ -457,7 +475,8 @@ bool check(int x) {
 }
 ```
 
-### Backtracking
+## Backtracking
+
 ```cpp
 int backtrack(STATE curr, OTHER_ARGUMENTS...) {
     if (BASE_CASE) {
@@ -475,6 +494,8 @@ int backtrack(STATE curr, OTHER_ARGUMENTS...) {
     return ans;
 }
 ```
+
+## DP
 
 ### DP: top-down memoization
 
@@ -504,14 +525,14 @@ int dp(STATE, vector<int>& arr) {
 
 ```cpp
 int fn(vector<int>& arr) {
-	vector<int> dp(arr.size() + 1);
-	dp[0] = 0;
+    vector<int> dp(arr.size() + 1);
+    dp[0] = 0;
 
-	for (int i = 1; i <= arr.size(); i++) {
-		dp[i] = RECURRENCE_RELATION(i);
-	}
+    for (int i = 1; i <= arr.size(); i++) {
+        dp[i] = RECURRENCE_RELATION(i);
+    }
 
-	return dp[arr.size()];
+    return dp[arr.size()];
 }
 ```
 
@@ -519,20 +540,21 @@ int fn(vector<int>& arr) {
 
 ```cpp
 int fn(vector<int>& arr) {
-	vector<vector<int>> dp(arr.size() + 1, vector<int>(arr.size() + 1));
-	dp[0][0] = 0;
+    vector<vector<int>> dp(arr.size() + 1, vector<int>(arr.size() + 1));
+    dp[0][0] = 0;
 
-	for (int i = 1; i <= arr.size(); i++) {
-		for (int j = 1; j <= arr.size(); j++) {
-			dp[i][j] = RECURRENCE_RELATION(i, j);
-		}
-	}
+    for (int i = 1; i <= arr.size(); i++) {
+        for (int j = 1; j <= arr.size(); j++) {
+            dp[i][j] = RECURRENCE_RELATION(i, j);
+        }
+    }
 
-	return dp[arr.size()][arr.size()];
+    return dp[arr.size()][arr.size()];
 }
 ```
 
-### Build a trie
+## Build a trie
+
 ```cpp
 // note: using a class is only necessary if you want to store data at each node.
 // otherwise, you can implement a trie using only hash maps.
@@ -560,7 +582,8 @@ TrieNode* buildTrie(vector<string> words) {
 }
 ```
 
-### Dijkstra's algorithm
+## Dijkstra's algorithm
+
 ```cpp
 vector<int> distances(n, INT_MAX);
 distances[source] = 0;
