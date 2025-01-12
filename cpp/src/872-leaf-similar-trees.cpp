@@ -27,13 +27,7 @@ public:
         dfs(root1, leaves1);
         dfs(root2, leaves2);
 
-        if (leaves1.size() != leaves2.size()) return false;
-
-        for (auto it1 = leaves1.begin(), it2 = leaves2.begin(); it1 != leaves1.end(); it1++, it2++){
-            if (*it1 != *it2) return false;
-        }
-
-        return true;
+        return leaves1 == leaves2;
     }
 
     void dfs(TreeNode *node, vector<int> &leaves){
