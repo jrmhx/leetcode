@@ -612,3 +612,17 @@ while (!heap.empty()) {
     }
 }
 ```
+
+## Bit manipulation
+
+### Count the number of set bits
+
+```cpp
+int popCount(int x) {
+    int count;
+    for (count = 0; x != 0; ++count) {
+        x &= x - 1; // zeroing out the least significant nonzero bit
+    }
+    return count;
+}
+```
