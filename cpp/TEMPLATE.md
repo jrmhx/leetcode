@@ -556,29 +556,40 @@ int fn(vector<int>& arr) {
 ## Build a trie
 
 ```cpp
-// note: using a class is only necessary if you want to store data at each node.
-// otherwise, you can implement a trie using only hash maps.
+#include <unordered_map>
+#include <vector>
+#include <string>
+#include <memory>
+#include <utility>
+#include <optional>
+#include <iostream>
+
+using namespace std;
+
 struct TrieNode {
-    int data;
-    unordered_map<char, TrieNode*> children;
-    TrieNode() : data(0), children(unordered_map<char, TrieNode*>()) {}
+    bool is_end;
+    unordered_map<char, unique_ptr<TrieNode>> childern;
 };
 
-TrieNode* buildTrie(vector<string> words) {
-    TrieNode* root = new TrieNode();
-    for (string word: words) {
-        TrieNode* curr = root;
-        for (char c: word) {
-            if (curr->children.find(c) == curr->children.end()) {
-                curr->children[c] = new TrieNode();
+optional<unique_ptr<TrieNode>> buildTrie(vector<string>& strs) {
+    try {
+        auto root = std::make_unique<TrieNode>();
+        for (auto str : strs) { // start from first word
+            auto curr = root.get();
+            for (auto c : str) { // start from first letter of the word
+                if (curr->childern.find(c) == curr->childern.end()){
+                    curr->childern[c] = std::make_unique<TrieNode>();
+                }
+                curr = curr->childern[c].get();
             }
-            curr = curr->children[c];
+            // end of the word
+            curr->is_end = true;
         }
-        // at this point, you have a full word at curr
-        // you can perform more logic here to give curr an attribute if you want
+        return root;
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+        return std::nullopt;
     }
-
-    return root;
 }
 ```
 
