@@ -341,6 +341,24 @@ int fn(vector<vector<int>>& graph) {
 }
 ```
 
+## create heap
+
+```cpp
+
+int main() {
+  std::vector<int> v {4, 8, 5, 7, 8,10,10};
+
+  std::priority_queue<int, std::vector<int>, std::greater<int>> pq(v.begin(), v.end());
+  // min heap, pq by default is max heap
+  // O(n) for constructor from range
+
+  // pop() push() O(log(n))
+
+  return 0;
+}
+
+```
+
 ## Find top k elements with heap
 
 ```cpp
