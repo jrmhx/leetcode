@@ -366,6 +366,32 @@ vector<int> fn(vector<int>& arr, int k) {
 ## Binary search
 
 ```cpp
+
+//找“最左满足条件”的值
+while (l < r) {
+    int mid = l + (r - l) / 2;
+    if (condition(mid)) {
+        r = mid; // 保留 mid
+    } else {
+        l = mid + 1; // 舍弃 mid
+    }
+}
+// l 是最左满足的位置
+
+//找“最右满足条件”的值
+while (l < r) {
+    int mid = l + (r - l + 1) / 2; // 注意这里用上取整
+    if (condition(mid)) {
+        l = mid; // 保留 mid
+    } else {
+        r = mid - 1; // 舍弃 mid
+    }
+}
+// r 是最右满足的位置
+
+```
+
+```cpp
 int binarySearch(vector<int>& arr, int target) {
         int left = 0;
         int right = int(arr.size()) - 1;
