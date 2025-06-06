@@ -522,21 +522,29 @@ bool check(int x) {
 ## Backtracking
 
 ```cpp
-int backtrack(STATE curr, OTHER_ARGUMENTS...) {
-    if (BASE_CASE) {
-        // modify the answer
-        return 0;
+int backtrack(State& curr, OtherArgs...) {
+    if (BASE_CASE_CONDITION) {
+        // Process the current valid state (e.g., save to result, count it)
+        return 1; // Often 1 when you're counting valid solutions
     }
 
     int ans = 0;
-    for (ITERATE_OVER_INPUT) {
-        // modify the current state
-        ans += backtrack(curr, OTHER_ARGUMENTS...)
-        // undo the modification of the current state
+    for (int i = 0; i < INPUT_SIZE; ++i) {
+        if (INVALID_CHOICE(curr, i)) continue;
+
+        // Choose: modify current state
+        makeChoice(curr, i, OtherArgs...);
+
+        // Explore
+        ans += backtrack(curr, OtherArgs...);
+
+        // Undo choice: backtrack
+        undoChoice(curr, i, OtherArgs...);
     }
 
     return ans;
 }
+
 ```
 
 ## DP
