@@ -521,30 +521,21 @@ bool check(int x) {
 
 ## Backtracking
 
-```cpp
-int backtrack(State& curr, OtherArgs...) {
-    if (BASE_CASE_CONDITION) {
-        // Process the current valid state (e.g., save to result, count it)
-        return 1; // Often 1 when you're counting valid solutions
-    }
-
-    int ans = 0;
-    for (int i = 0; i < INPUT_SIZE; ++i) {
-        if (INVALID_CHOICE(curr, i)) continue;
-
-        // Choose: modify current state
-        makeChoice(curr, i, OtherArgs...);
-
-        // Explore
-        ans += backtrack(curr, OtherArgs...);
-
-        // Undo choice: backtrack
-        undoChoice(curr, i, OtherArgs...);
-    }
-
-    return ans;
-}
-
+```python
+def backtrack(candidate):
+    if find_solution(candidate):
+        output(candidate)
+        return
+    
+    # iterate all possible candidates.
+    for next_candidate in list_of_candidates:
+        if is_valid(next_candidate):
+            # try this partial candidate solution
+            place(next_candidate)
+            # given the candidate, explore further.
+            backtrack(next_candidate)
+            # backtrack
+            remove(next_candidate)
 ```
 
 ## DP
